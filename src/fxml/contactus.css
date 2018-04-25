@@ -1,0 +1,9 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.contact {
+    -fx-background-image:url('./contact.jpg');
+    -fx-background-size: 100% 100%;
+
+}

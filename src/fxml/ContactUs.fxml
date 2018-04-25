@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="664.0" prefWidth="1322.0" styleClass="contact" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ContactUsController">
+    <stylesheets>
+        <URL value="@contactus.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="92.0" fitWidth="150.0" layoutX="277.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mobile/web_hi_res_512.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="274.0" layoutY="570.0" prefHeight="38.0" prefWidth="169.0" text="Mobile No.">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="415.0" layoutY="494.0" prefHeight="29.0" prefWidth="329.0" text="+91 9565854575     ">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="92.0" fitWidth="150.0" layoutX="782.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mail/web_hi_res_512.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="792.0" layoutY="561.0" prefHeight="17.0" prefWidth="92.0" text="Mail Id">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="937.0" layoutY="495.0" prefHeight="35.0" prefWidth="338.0" text="infoeventmenia@gmail.com">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="409.0" layoutY="543.0" prefHeight="17.0" prefWidth="214.0" text=" +91 7585153526">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="92.0" fitWidth="150.0" layoutX="323.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@address/web_hi_res_512.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="323.0" layoutY="332.0" prefHeight="17.0" prefWidth="103.0" text="Address">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label text="Label" />
+      <Label layoutX="441.0" layoutY="277.0" prefHeight="35.0" prefWidth="867.0" text="B104 , AsianPeak Plaza , Next To Central Mall , Shivajinagar , Pune 411054.">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

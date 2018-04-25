@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="664.0" prefWidth="1145.0" style="-fx-border-color: grey;" stylesheets="@feedback.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ShowFeedbackController">
+   <children>
+      <Pane layoutX="194.0" layoutY="80.0" prefHeight="117.0" prefWidth="1028.0" style="-fx-border-color: #2196F3;">
+         <children>
+            <Label fx:id="name0" layoutX="22.0" layoutY="21.0" prefHeight="20.0" prefWidth="273.0" text="Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="event_att0" layoutX="22.0" layoutY="49.0" prefHeight="20.0" prefWidth="273.0" text="Event Attended">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="fb0" layoutX="22.0" layoutY="75.0" prefHeight="20.0" prefWidth="273.0" text="Feedback">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="194.0" layoutY="215.0" prefHeight="117.0" prefWidth="1028.0" style="-fx-border-color: #2196F3;">
+         <children>
+            <Label fx:id="name1" layoutX="22.0" layoutY="21.0" prefHeight="20.0" prefWidth="273.0" text="Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="event_att1" layoutX="22.0" layoutY="49.0" prefHeight="20.0" prefWidth="273.0" text="Event Attended">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="fb1" layoutX="22.0" layoutY="75.0" prefHeight="20.0" prefWidth="273.0" text="Feedback">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="194.0" layoutY="350.0" prefHeight="117.0" prefWidth="1028.0" style="-fx-border-color: #2196F3;">
+         <children>
+            <Label fx:id="name2" layoutX="22.0" layoutY="21.0" prefHeight="20.0" prefWidth="273.0" text="Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="event_att2" layoutX="22.0" layoutY="49.0" prefHeight="20.0" prefWidth="273.0" text="Event Attended">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="fb2" layoutX="22.0" layoutY="75.0" prefHeight="20.0" prefWidth="273.0" text="Feedback">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="194.0" layoutY="487.0" prefHeight="117.0" prefWidth="1028.0" style="-fx-border-color: #2196F3;">
+         <children>
+            <Label fx:id="name3" layoutX="22.0" layoutY="22.0" prefHeight="20.0" prefWidth="273.0" text="Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="event_att3" layoutX="22.0" layoutY="49.0" prefHeight="20.0" prefWidth="273.0" text="Event Attended">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="fb3" layoutX="22.0" layoutY="75.0" prefHeight="20.0" prefWidth="273.0" text="Feedback">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button layoutX="984.0" layoutY="17.0" mnemonicParsing="false" onAction="#addFeedback" prefHeight="54.0" prefWidth="238.0" style="-fx-background-color: #2196F3;" text="Give  Feedback" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="758.0" layoutY="630.0" mnemonicParsing="false" onAction="#showNextPage" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #2196F3;" text="Next" textFill="WHITE" />
+      <Button layoutX="569.0" layoutY="630.0" mnemonicParsing="false" onAction="#showPreviousPage" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #2196F3;" text="Previous" textFill="WHITE" />
+   </children>
+</AnchorPane>

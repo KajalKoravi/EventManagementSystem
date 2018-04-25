@@ -1,0 +1,4 @@
+.anchorpane{
+    -fx-background-image:url('./city.jpg');
+    -fx-background-size: 100% 100%;
+}

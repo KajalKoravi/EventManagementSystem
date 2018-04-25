@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="Anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="714.0" prefWidth="1339.0" styleClass="anchorpane" stylesheets="@Home.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+   <children>
+      <Pane layoutX="-8.0" layoutY="43.0" prefHeight="604.0" prefWidth="1275.0" style="-fx-border-color: grey;" styleClass="anchorpane" stylesheets="@Home.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
+         <children>
+            <Label layoutX="199.0" layoutY="38.0" prefHeight="53.0" prefWidth="1039.0" text="Pick up your mood and get ready to cheer up life with us" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Button id="fest" fx:id="fest" layoutX="215.0" layoutY="175.0" mnemonicParsing="false" onAction="#getFestival" prefHeight="45.0" prefWidth="144.0" styleClass="festivals-button" stylesheets="@HomeButtons.css" text="Festivals">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="party" layoutX="416.0" layoutY="175.0" mnemonicParsing="false" onAction="#getParties" prefHeight="45.0" prefWidth="144.0" styleClass="parties-button" stylesheets="@HomeButtons.css" text="Parties">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="conf" layoutX="613.0" layoutY="175.0" mnemonicParsing="false" onAction="#getConference" prefHeight="45.0" prefWidth="144.0" styleClass="conference-button" stylesheets="@HomeButtons.css" text="Conference">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="standup" layoutX="819.0" layoutY="175.0" mnemonicParsing="false" onAction="#getstandup" prefHeight="45.0" prefWidth="144.0" styleClass="standup-button" stylesheets="@HomeButtons.css" text="Stand Up">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="exhibition" layoutX="1026.0" layoutY="175.0" mnemonicParsing="false" onAction="#getExhibition" prefHeight="45.0" prefWidth="144.0" styleClass="exhibition-button" stylesheets="@HomeButtons.css" text="Exhibition">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="concert" layoutX="215.0" layoutY="279.0" mnemonicParsing="false" onAction="#getConcerts" prefHeight="45.0" prefWidth="144.0" styleClass="concert-button" stylesheets="@HomeButtons.css" text="Concerts">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="tech" layoutX="416.0" layoutY="279.0" mnemonicParsing="false" onAction="#getTechEvents" prefHeight="45.0" prefWidth="144.0" styleClass="techevents-button" stylesheets="@HomeButtons.css" text="Tech-Events">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="seminars" layoutX="613.0" layoutY="279.0" mnemonicParsing="false" onAction="#getseminars" prefHeight="45.0" prefWidth="144.0" styleClass="seminars-button" stylesheets="@HomeButtons.css" text="Seminars">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="workshop" layoutX="819.0" layoutY="279.0" mnemonicParsing="false" onAction="#getWorkshop" prefHeight="45.0" prefWidth="144.0" styleClass="workshops-button" stylesheets="@HomeButtons.css" text="Workshop">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="speakers" layoutX="1026.0" layoutY="279.0" mnemonicParsing="false" onAction="#getOther" prefHeight="45.0" prefWidth="144.0" styleClass="speakers-button" stylesheets="@HomeButtons.css" text="Other">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLogout" layoutX="1281.0" layoutY="25.0" mnemonicParsing="false" onAction="#btnLogoutClicked" text="LogOut" visible="false" />
+         </children></Pane>
+      <Label layoutX="827.0" layoutY="18.0" onMouseClicked="#get_upcoming_events" prefHeight="27.0" prefWidth="144.0" text="Upcoming Events" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="1062.0" layoutY="20.0" onMouseClicked="#getContact" prefHeight="24.0" prefWidth="84.0" text="Contact Us" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lable_login" layoutX="1269.0" layoutY="18.0" onMouseClicked="#getLogin" prefHeight="24.0" prefWidth="56.0" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="754.0" layoutY="19.0" onMouseClicked="#getHome" prefHeight="24.0" prefWidth="73.0" text="Home" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1165.0" layoutY="18.0" onMouseClicked="#getFeedBack" prefHeight="24.0" prefWidth="84.0" text="Feedback" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

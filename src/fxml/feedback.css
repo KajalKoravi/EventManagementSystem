@@ -1,0 +1,9 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.feedback {
+    -fx-background-image:url('./feedback.jpg');
+    -fx-background-size: 100% 100%;
+
+}
