@@ -100,15 +100,18 @@ public class AdminPanelController implements Initializable {
     @FXML
     void viewEventListner(MouseEvent event) {
 
-        Parent root;
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/ViewEvents.fxml"));
-            Stage stage = new Stage();
-            //stage.setTitle("My New Stage Title");
+            FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("fxml/ViewEvents.fxml"));;
+            Parent root = (Parent) loader.load();
+
+            ViewEventController viewEventController=loader.getController();
+
+            viewEventController.openEvent("upcoming");
+
+
+            Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
-            // Hide this current window (if this is what you want)
-            // ((Node)(event.getSource())).getScene().getWindow().hide();
         }
         catch (IOException e) {
             e.printStackTrace();

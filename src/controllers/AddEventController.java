@@ -10,6 +10,8 @@ import models.EventModel;
 import utility.Utilities;
 
 import java.net.URL;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 
@@ -49,7 +51,7 @@ public class AddEventController implements Initializable {
         EventModel em= new EventModel();
 
 
-
+        LocalDate date1=event_date.getValue();
         if(Utilities.head_id != 0){
             em.setEvent_head(Utilities.head_id);
         }
@@ -57,7 +59,7 @@ public class AddEventController implements Initializable {
         em.setEvent_type(event_type.getSelectionModel().getSelectedItem().toString());
         em.setVenue(venue.getText());
         em.setTime(event_time.getText());
-        em.setEvent_date(event_date.getValue().toString());
+        em.setEvent_date(Date.valueOf(date1));
         em.setFees(fees.getText());
         em.setSponcered_by(sponcer.getText());
         em.setContact(contact.getText());

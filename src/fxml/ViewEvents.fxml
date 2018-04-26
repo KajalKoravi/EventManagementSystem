@@ -36,6 +36,11 @@
                                         <TextField fx:id="title0" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="551.0" promptText="Title of Event" />
                                         <TextArea fx:id="info0" layoutX="14.0" layoutY="39.0" prefHeight="176.0" prefWidth="602.0" promptText="More Info about Event" />
                                         <Label layoutX="14.0" layoutY="222.0" prefHeight="17.0" prefWidth="387.0" text="How Many People are Going For This Event" underline="true" />
+                              <Button fx:id="update0" layoutX="298.0" layoutY="218.0" mnemonicParsing="false" onAction="#update0Clicked" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #2196F3;" text="Update" textFill="WHITE" visible="false">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
                                     </children>
                                 </AnchorPane>
                             </items>
@@ -60,6 +65,11 @@
                                         <TextField fx:id="title1" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="548.0" promptText="Title of Event" />
                                         <TextArea fx:id="info1" layoutX="14.0" layoutY="39.0" prefHeight="172.0" prefWidth="601.0" promptText="more info about event" />
                                         <Label layoutX="14.0" layoutY="219.0" prefHeight="17.0" prefWidth="407.0" text="How MAny People are Going For This Event" underline="true" />
+                              <Button fx:id="update1" layoutX="312.0" layoutY="219.0" mnemonicParsing="false" onAction="#update1Clicked" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #2196F3;" text="Update" textFill="WHITE" visible="false">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
                                     </children>
                                 </AnchorPane>
                             </items>

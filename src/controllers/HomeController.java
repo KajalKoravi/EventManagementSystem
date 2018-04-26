@@ -7,11 +7,9 @@ package controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import DBOperation.DBOperation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,11 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import models.EventModel;
 import utility.Utilities;
-
-import javax.swing.plaf.basic.BasicOptionPaneUI;
-import javax.swing.text.View;
 
 /**
  *
@@ -48,21 +42,23 @@ public class HomeController implements Initializable {
     @FXML
     void getConcerts(ActionEvent event) {
 
-        Parent root;
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/ViewEvents.fxml"));
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/ViewEvents.fxml"));
 
-            root = (Parent)fxmlLoader.load();
-            Stage stage = new Stage();
+
             //stage.setTitle("My New Stage Title");
 
-            ViewEventController controller = fxmlLoader.<ViewEventController>getController();
+            FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("fxml/ViewEvents.fxml"));;
+            Parent root = (Parent) loader.load();
 
-            controller.setEventName("Concerts");
+            ViewEventController viewEventController=loader.getController();
+            viewEventController.openEvent("Concerts");
 
+            Stage stage=new Stage();
             stage.setScene(new Scene(root));
             stage.show();
-            // Hide this current window (if this is what you want)
+
+
             ((Node)(event.getSource())).getScene().getWindow().hide();
         }
         catch (IOException e) {
@@ -98,7 +94,17 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    void getExhibition(ActionEvent event) {
+    void getExhibition(ActionEvent event) throws IOException {
+
+        FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("fxml/ViewEvents.fxml"));;
+        Parent root = (Parent) loader.load();
+
+        ViewEventController viewEventController=loader.getController();
+        viewEventController.openEvent("Exhibition");
+
+        Stage stage=new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
 
     }
 
@@ -208,13 +214,7 @@ public class HomeController implements Initializable {
     @FXML
     void getWorkshop(ActionEvent event) {
 
-    }
 
-
-    @FXML
-    void get_upcoming_events(MouseEvent event) {
-
-        // this fumction loads form of all upcoming events
 
         Parent root;
         try {
@@ -224,6 +224,32 @@ public class HomeController implements Initializable {
             stage.setScene(new Scene(root));
             stage.show();
             // Hide this current window (if this is what you want)
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    @FXML
+    void get_upcoming_events(MouseEvent event) {
+
+        // this fumction loads form of all upcoming events
+
+        try {
+            FXMLLoader loader=new FXMLLoader(getClass().getClassLoader().getResource("fxml/ViewEvents.fxml"));;
+            Parent root = (Parent) loader.load();
+
+            ViewEventController viewEventController=loader.getController();
+
+            viewEventController.openEvent("upcoming");
+
+
+            Stage stage=new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
             ((Node)(event.getSource())).getScene().getWindow().hide();
         }
         catch (IOException e) {

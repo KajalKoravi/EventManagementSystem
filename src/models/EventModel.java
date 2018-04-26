@@ -2,6 +2,9 @@
 package models;
 
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 public class EventModel {
     
     private Integer event_head;
@@ -9,6 +12,17 @@ public class EventModel {
     private String event_type;
     private String venue;
     private String time;
+    private Date event_date;
+    private String fees;
+    private String sponcered_by;
+    private String Contact;
+    private String info;
+
+
+    private String head_username;
+    private String head_email;
+
+
 
     private int id;
     private String head;
@@ -45,23 +59,13 @@ public class EventModel {
         this.head_email = head_email;
     }
 
-    public String getEvent_date() {
+    public Date getEvent_date() {
         return event_date;
     }
 
-    public void setEvent_date(String event_date) {
+    public void setEvent_date(Date event_date) {
         this.event_date = event_date;
     }
-
-    private String event_date;
-    private String fees;
-    private String sponcered_by;
-    private String Contact;
-    private String info;
-
-
-    private String head_username;
-    private String head_email;
 
 
     public Integer getEvent_head() {

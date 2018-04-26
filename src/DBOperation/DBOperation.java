@@ -74,7 +74,7 @@ public class DBOperation {
         try {
             Statement stmt = db.connect().createStatement();
             String qry = "INSERT INTO `event`" +
-                    "( `admin_id`, `name`, `event_type`, `venue`, `time`, `date`, `fees`, `sponcered_by`, `contact`, `info`) " +
+                    "( `admin_id`, `name`, `event_type`, `venue`, `time`, `event_date`, `fees`, `sponcered_by`, `contact`, `info`) " +
                     "VALUES (" +
                     "'" + em.getEvent_head() + "'," +
                     "'" + em.getEvent_name() + "'," +
@@ -99,6 +99,30 @@ public class DBOperation {
 
 
     }
+
+
+
+    public void updateEvent(EventModel em) {
+
+        try {
+            Statement stmt = db.connect().createStatement();
+            //update query here
+            String qry = "";
+
+            System.out.println(qry);
+            stmt.executeUpdate(qry);
+
+            u.showAlert("Success", "Event Updated");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DBOperation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }
+
+
+
 
     public void insertFeedback(FeedbackModel fm) {
         try {
@@ -254,15 +278,24 @@ public class DBOperation {
 
 
 
-    public ArrayList<EventModel> getAllEvents(int page) {
+    public ArrayList<EventModel> getAllEvents(int page, String event_name) {
 
         ArrayList<EventModel> eventModelArrayList = new ArrayList<>();
+        String qry;
+
 
 
         try {
             Statement stmt = null;
             stmt = db.connect().createStatement();
-            String qry = "SELECT e.*, a.username as head FROM event e, admin a WHERE e.admin_id = a.id LIMIT "+page+",2";
+
+            if(event_name.equals("upcoming")){
+                 qry = "SELECT e.*, a.username as head FROM event e, admin a WHERE e.admin_id = a.id LIMIT "+page+",2";
+
+            }else{
+                qry = "SELECT e.*, a.username as head FROM event e, admin a WHERE e.admin_id = a.id AND e.event_type = '"+event_name+"' LIMIT "+page+",2";
+
+            }
             System.out.println(qry);
 
             ResultSet rs = stmt.executeQuery(qry);
@@ -276,7 +309,7 @@ public class DBOperation {
                 em.setHead(rs.getString("head"));
                 em.setTime(rs.getString("time"));
                 em.setVenue(rs.getString("venue"));
-                em.setEvent_date(rs.getString("event_date"));
+                em.setEvent_date(rs.getDate("event_date"));
                 em.setFees(rs.getString("fees"));
                 em.setSponcered_by(rs.getString("sponcered_by"));
                 em.setContact(rs.getString("contact"));

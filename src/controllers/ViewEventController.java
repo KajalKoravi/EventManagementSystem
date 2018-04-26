@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import models.EventModel;
@@ -51,6 +52,8 @@ public class ViewEventController implements Initializable {
 
 
     public String event_name;
+    public Button update0;
+    public Button update1;
 
 
     int page_number = 0 ;
@@ -66,20 +69,31 @@ public class ViewEventController implements Initializable {
      * Initializes the controller class.
      */
 
-    public void setEventName(String event_name){
-        this.event_name = event_name;
+    public void openEvent(String event_name){
+//        this.event_name = event_name;
+
+        setEventData(page_number, event_name);
+
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
 
-        System.out.println(event_name);
-        setEventData(page_number);
+
+
+        if(Utilities.head_id != 0 ){
+            update0.setVisible(true);
+            update1.setVisible(true);
+
+        }
 
 
 
     }
+
+
 
     public void btnBackClicked(ActionEvent actionEvent) {
         page_number = page_number-offset;
@@ -87,7 +101,7 @@ public class ViewEventController implements Initializable {
         if(page_number < 0 || page_number == 0 ){
             new Utilities().showAlert("","You are on first page");
         }else{
-            setEventData(page_number);
+            setEventData(page_number, event_name);
 
         }
 
@@ -96,14 +110,14 @@ public class ViewEventController implements Initializable {
     public void btnNextClicked(ActionEvent actionEvent) {
         page_number = page_number+offset;
 
-        setEventData(page_number);
+        setEventData(page_number, event_name);
 
     }
 
 
-    void setEventData(int page_number){
+    void setEventData(int page_number, String event_name){
 
-        ArrayList<EventModel> arr = db.getAllEvents(page_number);
+        ArrayList<EventModel> arr = db.getAllEvents(page_number, event_name);
 
         eventModel0 = arr.get(0);
         eventModel1 = arr.get(1);
@@ -112,13 +126,13 @@ public class ViewEventController implements Initializable {
         info0.setText(eventModel0.getInfo());
         venue0.setText(eventModel0.getVenue());
         time0.setText(eventModel0.getTime());
-        date0.setText(eventModel0.getEvent_date());
+        date0.setText(eventModel0.getEvent_date().toString());
 
         title1.setText(eventModel1.getEvent_name());
         info1.setText(eventModel1.getInfo());
         venue1.setText(eventModel1.getVenue());
         time1.setText(eventModel1.getTime());
-        date1.setText(eventModel1.getEvent_date());
+        date1.setText(String.valueOf(eventModel1.getEvent_date()));
 
 
 
@@ -164,5 +178,21 @@ public class ViewEventController implements Initializable {
         }else{
             db.doEventBooking(event_id,participant_id );
         }
+    }
+
+    public void update0Clicked(ActionEvent actionEvent) {
+
+        //get all info from all textfields 0 and fire update query
+
+        EventModel em = new EventModel();
+
+        em.setEvent_name(title0.getText());
+        // initialise remaining data
+
+        db.updateEvent(em);
+    }
+
+    public void update1Clicked(ActionEvent actionEvent) {
+
     }
 }
